@@ -4,5 +4,9 @@
     {{title}}
   </h1>
 </div>
-<table uat-datatable></table>
+<button (click)="onAddToTable()">Add To Table</button>
+<table uat-datatable 
+  [model]="dtModel"
+  [rowsData]="tableRows">
+</table>
 

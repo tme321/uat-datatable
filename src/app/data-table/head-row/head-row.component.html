@@ -1,5 +1,4 @@
-<th uat-head-data></th>
-<th uat-head-data></th>
-<th uat-head-data></th>
-<th uat-head-data></th>
-<th uat-head-data></th>
+<th uat-head-data
+    *ngFor="let format of headerCellFormats" 
+    [format]="format" >
+</th>
