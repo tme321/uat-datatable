@@ -1,3 +1,11 @@
-<thead uat-head></thead>
-<tbody uat-body></tbody>
-<tfoot uat-foot></tfoot> 
+<thead uat-head 
+    [headerCells]="headerModel | async">
+</thead>
+<tbody uat-body 
+    [bodyCells]="bodyModel | async"
+    [rowsData]="rowsCache">
+</tbody>
+<tfoot uat-foot 
+    [footerCells]="footerModel | async"
+    [rowsData]="rowsCache">
+</tfoot> 

@@ -1,1 +1,5 @@
-<tr uat-row></tr>
+<tr uat-row
+    *ngFor="let rowData of rowsData"
+    [rowData]="rowData"
+    [cellFormats]="footerCells">
+</tr>
