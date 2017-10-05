@@ -5,8 +5,10 @@ import { Column } from "./column.interface";
  * a UATDataTableComponent will read to
  * compose itself.
  * 
- * columns: an array of column definitions
  */
 export interface UATDataTable {
+    /**
+     * An array of column definitions
+     */
     columns: Column[];
 }
