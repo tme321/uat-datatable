@@ -1,3 +1,5 @@
+import { DynamicComponentData } from "../../common/dynamic-component/dynamic-component-data.interface";
+
 /**
  * Describes how a dynamic component
  * will be rendered inside of a cell
@@ -5,5 +7,5 @@
  * 
  * TODO: Unimplemented.
  */
-export interface DynamicCellFormat {
+export interface DynamicCellFormat extends DynamicComponentData {
 }

@@ -8,6 +8,7 @@ import { HeadDataComponent } from './head-data/head-data.component';
 import { DataComponent } from './data/data.component';
 import { FootComponent } from './foot/foot.component';
 import { HeadRowComponent } from './head-row/head-row.component';
+import { UatCommonModule } from '../common/uat-common.module';
 
 /**
  * This module exports the UATDataTableComponent
@@ -16,6 +17,7 @@ import { HeadRowComponent } from './head-row/head-row.component';
 @NgModule({
   imports: [
     CommonModule,
+    UatCommonModule,
   ],
   exports: [
     UATDataTableComponent
