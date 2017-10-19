@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UATDataTable } from './data-table/models/data-table.interface';
+import { CustomCellComponent } from './custom-cell/custom-cell.component';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,18 @@ export class AppComponent {
   title = 'UAT Data Table Tutorial';
   
   ngOnInit() {
+    this.dtModel.columns.push({
+      headerCellFormat: {
+        content: `Dynamic Header Cell`
+      },
+      cellFormat: {
+        dynamicFormat: {
+          component: CustomCellComponent,
+          providers: [],
+          inputs: {}
+        }
+      },      
+    });
     this.onAddToTable();
   }
 
@@ -32,7 +45,7 @@ export class AppComponent {
    * to an instance of the table.
    */
   tableRows = [{
-    body: {content: []},
+    body: { dynamic: '', content: []},
     footer: {content: []},
   }];
 
@@ -75,9 +88,13 @@ export class AppComponent {
         }];
   }
 
-  addValuesToRow(rowNum: number) {
-    this.tableRows[0].body.content[`${rowNum}`] = `Body Data ${rowNum}`;
-    this.tableRows[0].footer.content[`${rowNum}`] = `Footer Data ${rowNum}`;
+  addValuesToRow(colNum: number) {
+    /*
+     * The structure for a row here is arbitrary
+     */
+    this.tableRows[0].body.dynamic = `Dynamic ${colNum}`;
+    this.tableRows[0].body.content[`${colNum}`] = `Body Data ${colNum}`;
+    this.tableRows[0].footer.content[`${colNum}`] = `Footer Data ${colNum}`;
     this.tableRows = [...this.tableRows]; 
   }
 

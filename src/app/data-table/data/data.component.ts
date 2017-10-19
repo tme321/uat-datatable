@@ -24,9 +24,6 @@ export class DataComponent<T> implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.format);
-    console.log(this.data);
-    this.resolveData(this.format.contentPath, this.data);
   }
 
   resolveData(path: string, data: T) {

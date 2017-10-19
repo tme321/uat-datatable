@@ -1,1 +1,6 @@
-<span>{{resolveData(format.contentPath, data)}}</span>
+<ng-container *ngIf="format?.contentPath">
+    <span>{{resolveData(format.contentPath, data)}}</span>
+</ng-container>
+<ng-container *ngIf="format?.dynamicFormat"
+    [uat-dynamic-component]="format.dynamicFormat">
+</ng-container>
